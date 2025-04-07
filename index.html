@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="calculator-container">
+    <header>
+      <h1>Scientific Calculator</h1>
+      <button id="toggle-mode">☀️ Dark Mode</button>
+    </header>
+
+    <!-- Display -->
+    <div class="display">
+      <input type="text" id="calc-display" readonly />
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="copy">📋 Copy</button>
+      <select id="precision">
+        <option value="default">Default</option>
+        <option value="2">2 dp</option>
+        <option value="4">4 dp</option>
+        <option value="6">6 dp</option>
+      </select>
+      <button id="toggle-scientific">🔬 Scientific</button>
+      <button id="mode-btn">🎛 Mode</button>
+    </div>
+
+    <!-- Button Grid -->
+    <div class="button-grid">
+      <!-- Basic Keys -->
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn operator">/</button>
+      <button class="btn function" data-func="sqrt">√</button>
+
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn operator">*</button>
+      <button class="btn function" data-func="square">x²</button>
+
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn operator">-</button>
+      <button class="btn function" data-func="pow">x^y</button>
+
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button class="btn" id="equals">=</button>
+      <button class="btn operator">+</button>
+      <button class="btn" id="clear">C</button>
+
+      <button class="btn" id="backspace">X</button>
+
+      <!-- Scientific -->
+      <button class="btn sci" data-func="sin">sin</button>
+      <button class="btn sci" data-func="cos">cos</button>
+      <button class="btn sci" data-func="tan">tan</button>
+      <button class="btn sci" data-func="log">log</button>
+      <button class="btn sci constant" data-value="pi">π</button>
+      <button class="btn sci constant" data-value="e">e</button>
+      <button class="btn sci convert">DEG</button>
+
+      <!-- Memory -->
+      <button class="btn mem" id="mc">MC</button>
+      <button class="btn mem" id="mr">MR</button>
+      <button class="btn mem" id="mplus">M+</button>
+    </div>
+
+    <!-- Extra Mode Buttons (injected dynamically) -->
+    <div id="mode-buttons" class="button-grid hidden"></div>
+
+    <footer>
+      <p><span id="mode-indicator">Basic</span> Mode</p>
+    </footer>
+  </div>
+
+  <!-- Main Script -->
+  <script src="script.js" type="module"></script>
+</body>
+</html>
